@@ -141,11 +141,11 @@ compdef _git glp=git-log
 # When you want to go back to work, just unwip it
 #
 # This function return a warning if the current branch is a wip
-function work_in_progress() {
-  if $(git log -n 1 | grep -q -c wip); then
-    echo "WIP!!"
-  fi
-}
+#function work_in_progress() {
+#  if $(git log -n 1 | grep -q -c wip); then
+#    echo "WIP!!"
+#  fi
+#}
 # these alias commit and uncomit wip branches
 alias gwip='git add -A; git ls-files --deleted -z | xargs -0 git rm; git commit -m "wip"'
 alias gunwip='git log -n 1 | grep -q -c wip && git reset HEAD~1'
